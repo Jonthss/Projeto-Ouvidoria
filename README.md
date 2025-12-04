@@ -90,5 +90,3 @@ python main.py
 Projeto desenvolvido por **Jonathas Barbosa de Oliveira** como parte da atividade acadêmica de Banco de Dados e Programação.
 
 ---
-
-Se precisar gerar documentação adicional, diagramas ou uma versão em PDF, posso criar também!
