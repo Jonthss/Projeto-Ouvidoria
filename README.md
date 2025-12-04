@@ -1,4 +1,4 @@
-# Projeto Ouvidoria - Locadora Guylherme
+# Projeto Ouvidoria
 
 Este repositório contém um sistema de **Ouvidoria** desenvolvido em Python, integrando operações de CRUD com um banco de dados MySQL. O projeto permite registrar, listar, pesquisar, atualizar e deletar manifestações dos usuários.
 
