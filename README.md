@@ -13,7 +13,7 @@ Este repositório contém um sistema de **Ouvidoria** desenvolvido em Python, in
 
 ## 🗄️ Banco de Dados
 
-O banco utilizado se chama **`locadora_guylherme`**, contendo as seguintes tabelas:
+O banco utilizado contem a seguinte estrutura:
 
 ### **Tabela: ouvidoria**
 | Coluna     | Tipo        | Descrição |
