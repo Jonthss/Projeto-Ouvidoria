@@ -1,88 +1,94 @@
-📢 Projeto Ouvidoria
+# Projeto Ouvidoria - Locadora Guylherme
 
-Este projeto é um sistema de Ouvidoria desenvolvido em Python com integração a um banco de dados MySQL. A aplicação permite que usuários registrem reclamações, sugestões ou elogios (manifestações), além de permitir a gestão administrativa desses registros (pesquisa, exclusão e atualização de status).
+Este repositório contém um sistema de **Ouvidoria** desenvolvido em Python, integrando operações de CRUD com um banco de dados MySQL. O projeto permite registrar, listar, pesquisar, atualizar e deletar manifestações dos usuários.
 
-Desenvolvido como parte da avaliação da disciplina, focado na manipulação de dados via CRUD (Create, Read, Update, Delete).
+## 📁 Estrutura do Projeto
 
-🚀 Funcionalidades
+```
+├── main.py
+├── operacoesbd.py
+├── funcoes_ouvidoria.py
+└── README.md
+```
 
-O sistema opera via terminal (CLI) e oferece as seguintes opções:
+## 🗄️ Banco de Dados
 
-Listar Manifestações: Exibe todas as ocorrências registradas no banco.
+O banco utilizado se chama **`locadora_guylherme`**, contendo as seguintes tabelas:
 
-Criar Nova Manifestação: Insere um novo problema ou sugestão.
+### **Tabela: ouvidoria**
+| Coluna     | Tipo        | Descrição |
+|------------|-------------|-----------|
+| codigo     | INT (PK)    | Identificador único |
+| problema   | VARCHAR     | Descrição da manifestação |
+| status     | VARCHAR     | Status atual da manifestação |
 
-Contador: Exibe o número total de registros no sistema.
+Exemplo visual:
 
-Pesquisar por Código: Busca detalhes de uma manifestação específica pelo ID.
+```
+ouvidoria
+ ├── codigo
+ ├── problema
+ └── status
+```
 
-Atualizar Status: Altera o estado da manifestação (Ex: De Pendente para Resolvido ou Fechado).
+## 🧩 Funcionalidades
 
-Deletar Manifestação: Remove um registro do banco de dados (com confirmação de segurança).
+### ✔ Listagem de manifestações  
+Mostra todas as manifestações cadastradas.
 
-🛠️ Tecnologias Utilizadas
+### ✔ Criar nova manifestação  
+Registra um novo texto no banco de dados.
 
-Python 3
+### ✔ Contagem de manifestações  
+Exibe quantas manifestações existem no sistema.
 
-MySQL (Banco de Dados)
+### ✔ Pesquisar por código  
+Busca uma manifestação específica pelo ID.
 
-MySQL Connector (Driver de conexão)
+### ✔ Deletar manifestação  
+Remove uma manifestação existente mediante confirmação.
 
-🗂️ Estrutura do Projeto
+### ✔ Atualizar status  
+Possibilita alterar o status da manifestação para:
+- fechado  
+- encerrado  
+- resolvido  
+- em andamento  
+- pendente  
 
-main.py: Arquivo principal que executa o menu e o loop do sistema.
+## 🧪 Tecnologias Utilizadas
+- Python 3  
+- MySQL Connector  
+- Banco de Dados MySQL  
+- Paradigma estruturado  
 
-funcoes_ouvidoria.py: Contém a lógica de negócios (funções para listar, criar, deletar, etc.).
+## 🚀 Como Executar o Projeto
 
-operacoesbd.py: Módulo responsável pela conexão e execução de comandos SQL no banco (wrapper).
-
-📝 Pré-requisitos e Configuração do Banco de Dados
-
-Antes de executar, é necessário preparar o banco de dados.
-
-Certifique-se de ter o MySQL instalado.
-
-Crie o banco de dados e a tabela conforme a estrutura abaixo:
-
--- Criação da Tabela 'ouvidoria'
-CREATE TABLE ouvidoria (
-    codigo INT AUTO_INCREMENT PRIMARY KEY,
-    problema VARCHAR(255) NOT NULL,
-    status VARCHAR(50) DEFAULT 'Pendente'
-);
-
-
-Nota: O código atual está configurado para conectar no banco locadora_guylherme (conforme linha 5 do main.py). Você pode alterar esse nome no código ou criar o banco com esse nome.
-
-⚙️ Instalação e Execução
-
-Clone o repositório:
-
-git clone [https://github.com/seu-usuario/projeto-ouvidoria.git](https://github.com/seu-usuario/projeto-ouvidoria.git)
-cd projeto-ouvidoria
-
-
-Instale a dependência do MySQL:
-
+### 1️⃣ Instale o MySQL Connector:
+```bash
 pip install mysql-connector-python
+```
 
+### 2️⃣ Ajuste as credenciais de conexão em `main.py`:
+```python
+conexao = criarConexao('localhost', 'seu_usuario', 'sua_senha', 'nome_do_banco')
+```
 
-Configure a Conexão:
-Abra o arquivo main.py e verifique a linha de conexão. Altere os parâmetros 'localhost', 'root', 'SENHA', 'NOME_DO_BANCO' para corresponderem ao seu ambiente local:
-
-# Exemplo em main.py
-conexao = criarConexao('localhost', 'root', 'sua_senha_aqui', 'seu_banco_aqui')
-
-
-Execute o projeto:
-
+### 3️⃣ Execute o sistema:
+```bash
 python main.py
+```
 
+## 📌 Observações Importantes
+- O sistema utiliza *prepared statements* para evitar SQL Injection.  
+- Todas as operações com o banco possuem tratamento de exceções.  
+- O menu é totalmente interativo via terminal.
 
-👤 Autor
+---
 
-Jonathas Barbosa de Oliveira
+## 👨‍💻 Autor
+Projeto desenvolvido por **Jonathas Barbosa de Oliveira** como parte da atividade acadêmica de Banco de Dados e Programação.
 
-Projeto Ouvidoria - Etapa 2
+---
 
-Curso: Análise e Desenvolvimento de Sistemas
+Se precisar gerar documentação adicional, diagramas ou uma versão em PDF, posso criar também!
