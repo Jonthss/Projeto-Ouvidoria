@@ -1,7 +1,7 @@
 # JONATHAS BARBOSA DE OLIVEIRA - Projeto Ouvidoria - Etapa 2
 
 from operacoesbd import criarConexao
-from funcoes_ouvidoria import * 
+from ouvidoria import * 
 
 conexao = criarConexao('localhost','root','88558514', 'locadora_guylherme')
 
